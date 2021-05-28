@@ -16,9 +16,9 @@
 		{% block breadcrumb %}
 		<nav aria-label="breadcrumb">
   			<ol class="breadcrumb">
-				<li class="breadcrumb-item"><a href="{% url 'home' %}"><img class = "portrait" src = "{% static 'images/photo_alexandre_petit.png' %}"/></a></li>
+				<li class="breadcrumb-item"><a href="{% url 'home' %}"><img class = "portrait" src = "{% static 'medias/images/photo_alexandre.png' %}"/></a></li>
     			<li class="breadcrumb-item"><a href="{% url 'home' %}">HOME</a></li>
-    			{% comment %} <li class="breadcrumb-item active"><a href="{% url 'RESTAURANTS:restaurants' %}">SOFTWARE LIBRARY</a></li> {% endcomment %}
+    			<li class="breadcrumb-item active"><a href="{% url 'RESTAURANTS:restaurants' %}">SOFTWARE LIBRARY</a></li>
   			</ol>
 		</nav>
 		{% endblock %}
