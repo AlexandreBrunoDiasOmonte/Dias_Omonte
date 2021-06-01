@@ -1,3 +1,10 @@
+from RESTAURANTS.models import Restaurant
 from django.contrib import admin
 
-# Register your models here.
+@admin.register(Restaurant)
+class RestaurantAdmin(admin.ModelAdmin):
+    search_fields = ['name', 'city', 'codePostal']
+    list_filter = ['city']
+    list_display = ['name', 'adress', 'city', 'phone', 'webSite']
+    ordering = ['name']
+    list_per_page = 10
