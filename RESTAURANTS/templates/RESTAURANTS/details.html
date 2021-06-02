@@ -1,0 +1,34 @@
+{% extends 'layout/head.html' %}
+{% block title %}DETAILS{% endblock %}
+{% load static %}
+{% block breadcrumb %}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a class = "lien" href="{% url 'home' %}">Home</a></li>
+            <li class="breadcrumb-item"><a class="lien" href="{% url 'RESTAURANTS:restaurants' %}">RESTAURANTS</a></li>
+            <li class="breadcrumb-item active">DETAILS</li>
+            <li class="breadcrumb-item active">{{ resto.name }}</li>
+        </ol>
+    </nav>
+{% endblock %}
+{% block body %}
+	<div class="tableau">
+		<h2>{{ resto.name }}</h2>
+	</div>
+	<div class="btn table-primary bouton_details tableau1">
+		<img class="resto-img" src="{{ resto.image }}" width="100%" height="100%">
+	</div>
+	<br>
+	<div>
+		<h4>{{ resto.adress }} {{ resto.codePostal }} {{ resto.city }}</h4>
+	</div>
+	<div>
+		<h4><a href="{{ resto.webSite }}" target="_blank">{{ resto.webSite }}</a></h4>
+	</div>
+	<div>
+		<h4><a href="mailto:{{ resto.email }}">{{ resto.email }}</a></h4>
+	</div>
+	<div class="tableau2">
+		<h4>{{ resto.phoneIndicator }} <a href="tel:{{ resto.phone }}">{{ resto.phone }}</a></h4>
+	</div>
+{% endblock %}
