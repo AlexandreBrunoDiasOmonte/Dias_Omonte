@@ -10,6 +10,10 @@
     margin-top: 15px;
 }
 .lien{
+    font-size: 14px;
+    font-weight: normal;
+    vertical-align: middle;
+    text-align: center;
     padding: 10px;
 }
 .lien:hover{

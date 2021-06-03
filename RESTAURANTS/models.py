@@ -10,7 +10,7 @@ class Restaurant(models.Model):
     phoneIndicator = models.PositiveIntegerField('Indicateur du Pays', blank=True, editable=True)
     phone = models.CharField('Numéro de téléphone', unique=True, blank=True, max_length=15, editable=True)
     webSite = models.URLField('Site web', blank=True, editable=True)
-    image = models.ImageField(upload_to=STATICFILES_DIRS[0] + 'MEDIAS/restaurants/')
+    image = models.URLField('Lien de l\'image', blank=False)
 
     def __str__(self):
         return self.name
