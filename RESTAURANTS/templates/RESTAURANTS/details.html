@@ -7,20 +7,20 @@
             <li class="breadcrumb-item"><a class = "lien" href="{% url 'home' %}">Home</a></li>
             <li class="breadcrumb-item"><a class="lien" href="{% url 'RESTAURANTS:restaurants' %}">RESTAURANTS</a></li>
             <li class="breadcrumb-item active">DETAILS</li>
-            <li class="breadcrumb-item active">{{ resto.name }}</li>
+            <li class="breadcrumb-item active">{{ resto.restaurant_name }}</li>
         </ol>
     </nav>
 {% endblock %}
 {% block body %}
 	<div class="tableau">
-		<h2>{{ resto.name }}</h2>
+		<h2>{{ resto.restaurant_name }}</h2>
 	</div>
 	<div class="btn table-primary bouton_details tableau1">
 		<img class="resto-img" src="{{ resto.image }}" width="100%" height="100%">
 	</div>
 	<br>
 	<div>
-		<h4>{{ resto.adress }} {{ resto.codePostal }} {{ resto.city }}</h4>
+		<h4>{{ resto.adress }} {{ resto.city.cp_name }} {{ resto.city }}</h4>
 	</div>
 	<div>
 		<h4><i class="fab fa-internet-explorer"></i>&nbsp;<a href="{{ resto.webSite }}" target="_blank">{{ resto.webSite }}</a></h4>

@@ -3,7 +3,7 @@ from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
 
 def restaurants(request):
-    restos = Restaurant.objects.order_by('name')
+    restos = Restaurant.objects.order_by('restaurant_name')
     paginator = Paginator(restos, 9)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)

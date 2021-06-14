@@ -12,9 +12,9 @@
 {% block body %}
     {% for resto in page_obj %}
         <span>
-            <a href="details/{{resto.name}}">
+            <a href="details/{{resto.restaurant_name}}">
                 <button class="btn table-primary bouton">
-                    <h2>{{ resto.name }}</h2>
+                    <h2>{{ resto.restaurant_name }}</h2>
                     <div>
                         <img class="resto-img" src="{{ resto.image }}" width="100%" height="100%">
                     </div>
