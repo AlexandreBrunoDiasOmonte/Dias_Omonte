@@ -106,7 +106,7 @@
 }
 .tableau2{
     box-sizing:border-box;
-    border-radius:30px;
+    border-radius:0;
     width:30%;
     font-family:verdana;
     box-align:left;
@@ -118,8 +118,8 @@
 .tableau{
     box-sizing:border-box;
     color:blue;
-    border-radius:30px;
-    background-color:#26C4EC;
+    border-radius:0;
+    background-color:#A9EAFE;
     width:50%;
     margin-left:25%;
     margin-bottom:15px;

@@ -1,4 +1,4 @@
-from RESTAURANTS.models import CodePostal, Restaurant, Villes
+from RESTAURANTS.models import CodePostal, Pays, Restaurant, Villes
 from django.contrib import admin
 
 @admin.register(CodePostal)
@@ -15,6 +15,14 @@ class VillesAdmin(admin.ModelAdmin):
     list_filter = ['ville_name']
     list_display = ['ville_name', 'cp_name']
     ordering = ['ville_name']
+    list_per_page = 10
+
+@admin.register(Pays)
+class PaysAdmin(admin.ModelAdmin):
+    search_fields = ['pays_name']
+    list_filter = ['pays_name']
+    list_display = ['pays_name']
+    ordering = ['pays_name']
     list_per_page = 10
 
 @admin.register(Restaurant)
