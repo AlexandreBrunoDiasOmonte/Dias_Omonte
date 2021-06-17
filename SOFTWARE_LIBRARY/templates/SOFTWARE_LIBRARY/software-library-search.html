@@ -1,0 +1,38 @@
+{% extends 'layout/head.html' %}
+{% block title %}Search{% endblock %}
+{% load static %}
+{% block body %}
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container-fluid">
+			{% include 'SOFTWARE_LIBRARY/software_search_form.html' %}
+			<ul class="nav nav-pills">
+				<li class="nav-item">
+					<a class="nav-link" style="padding: 10px 15px;border-radius: 0" aria-current="page" href="{% url 'SOFTWARE_LIBRARY:software-library' %}">
+						All
+					</a>
+				</li>
+				{% for category in categories %}
+					<li class="nav-item">
+						<a class="nav-link" style="padding: 10px 15px;border-radius: 0" aria-current="page" href="/software-library/{{ category.category_name }}">
+							{{ category }}
+						</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</nav>
+	{% include 'layout/pagination_search.html' %}
+	<div class="row row-cols-1 row-cols-md-4" style="margin: 15px 10px 15px 15px;">
+		{% for software_search in page_obj_search %}
+			<a style="margin-bottom: 20px" href="/software-library/details/{{ software_search.software_name }}?page={% if page_number == None %}1{% else %}{{ page_number }}{% endif %}">
+				<button class="card w-100 h-100 button-software">
+					<img class="logo-image" style="width: 128px;height: 128px" src="{{ software_search.software_logo }}" alt="{{ software_search.software_name }}"/>
+					<div class="card-body">
+						<h5 class="text-uppercase text-center">{{ software_search.software_name }}</h5>
+					</div>
+				</button>
+			</a>
+		{% endfor %}
+	</div>
+	{% include 'layout/pagination_search.html' %}
+{% endblock %}

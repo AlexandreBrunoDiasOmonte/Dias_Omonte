@@ -1,4 +1,17 @@
-﻿.fond {
+﻿*{
+	font-family: Verdana, sans-serif;
+}
+.html{
+    height: 100%;
+    width: 100%;
+}
+.body{
+    min-height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.fond {
     background-color: #A9EAFE;
 }
 .page{
@@ -9,7 +22,22 @@
     background-color: #FFFFFF;
     margin-top: 15px;
 }
+.home-icon{
+    box-sizing:border-box;
+	width: 12.5%;
+    height: 12.5%;
+	margin: 0;
+	padding: 5px;
+}
+.menubar-item{
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
 .lien{
+    font-size: 14px;
+    font-weight: normal;
+    vertical-align: middle;
+    text-align: center;
     padding: 10px;
 }
 .lien:hover{
@@ -42,6 +70,9 @@
 }
 .bouton_details{
     width: 100%;
+}
+.logo-image{
+    margin: 25%;
 }
 .images{
     float: right;
@@ -90,19 +121,13 @@
     display: flex;
     justify-content: center;
 }
-.tableau1{
-    box-sizing:border-box;
-    border-radius:25px;
-    width:25%;
-    margin:5px;
-    padding:5px;
-    font-family:verdana;
-    box-align:left;
-    text-align:center;
+.bouton-software{
+    margin-top: 10px;
+    height: 100px;
 }
-.tableau2{
+.button-software:hover{
     box-sizing:border-box;
-    border-radius:30px;
+    border-radius:0;
     width:30%;
     font-family:verdana;
     box-align:left;
@@ -114,8 +139,8 @@
 .tableau{
     box-sizing:border-box;
     color:blue;
-    border-radius:30px;
-    background-color:#26C4EC;
+    border-radius:0;
+    background-color:#A9EAFE;
     width:50%;
     margin-left:25%;
     margin-bottom:15px;
@@ -157,6 +182,8 @@
     font-weight:bold;
     box-align:center;
     text-align:center;
+    box-shadow:0 10px 10px 3px #74D0F1;
+    background-color: #74D0F1;
 }
 .bouton-pagination{
     width:12%;
