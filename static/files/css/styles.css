@@ -34,6 +34,10 @@
 	margin-bottom: 15px;
 }
 .lien{
+    font-size: 14px;
+    font-weight: normal;
+    vertical-align: middle;
+    text-align: center;
     padding: 10px;
 }
 .lien:hover{
@@ -123,6 +127,61 @@
 }
 .button-software:hover{
     box-sizing:border-box;
+    border-radius:0;
+    width:30%;
+    font-family:verdana;
+    box-align:left;
+    text-align:center;
+}
+.tableau1, .tableau2{
+    float:left;
+}
+.tableau{
+    box-sizing:border-box;
+    color:blue;
+    border-radius:0;
+    background-color:#A9EAFE;
+    width:50%;
+    margin-left:25%;
+    margin-bottom:15px;
+    padding:5px;
+    font-family:verdana;
+    font-weight:bold;
+    box-align:center;
+    text-align:center;
+}
+.tableau3{
+    box-sizing:border-box;
+    margin-bottom:20px;
+    margin-left:25%;
+    width:50%;
+    font-family:verdana;
+    box-align:center;
+    text-align:center;
+}
+.tableau4{
+    box-sizing:border-box;
+    color:white;
+    border-radius:30px;
+    background-color:#26C4EC;
+    width:100%;
+    margin-bottom:15px;
+    padding:5px;
+    font-family:verdana;
+    font-weight:bold;
+    box-align:center;
+    text-align:center;
+}
+.tableau5{
+    box-sizing:border-box;
+    color:blue;
+    width:100%;
+    margin-bottom:15px;
+    padding:5px;
+    font-family:verdana;
+    font-weight:bold;
+    box-align:center;
+    text-align:center;
     box-shadow:0 10px 10px 3px #74D0F1;
     background-color: #74D0F1;
 }
