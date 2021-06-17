@@ -1,0 +1,55 @@
+{% extends 'layout/head.html' %}
+{% block title %}SOFTWARE DETAILS{% endblock %}
+{% load static %}
+{% block favicon %}<link rel ='shortcut icon' href="{{ software_details.software_logo }}">{% endblock %}
+{% block body %}
+	<nav class="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm navbar-light" style="background-color: #A9EAFE">
+		<div class="container-fluid">
+			<span class="navbar-brand">
+				{% if page_number == None %}
+					<a href="{% url 'SOFTWARE_LIBRARY:software-library' %}?page=1">
+						<img src="{% static 'medias/images/left-arrow-26.png' %}" alt="left-arrow">
+					</a>
+				{% else %}
+					<a href="{% url 'SOFTWARE_LIBRARY:software-library' %}?page={{ page_number }}">
+						<img src="{% static 'medias/images/left-arrow-26.png' %}" alt="left-arrow">
+					</a>
+				{% endif %}
+				<img src="{{ software_details.software_logo }}" alt="{{ software_details.software_name }}" width="50px" height="50px"/>
+				<span class="h3">{{ software_details.software_name }}</span>
+			</span>
+			<span class="col col-3">
+				<label class="btn-lg h4">Version: {{ software_details.software_version }}</label>
+				<a class="btn btn-lg btn-success" href="{{ software_details.software_source }}" download="{{ software_details.software_source }}" target="_blank">
+					<span class="h4">Install</span>
+				</a>
+			</span>
+
+		</div>
+
+	</nav>
+	<div class="col col-12 col-lg-12 col-md-12 col-sm-12" style="text-align: center;padding-top: 30px;padding-bottom: 30px;background-color: #EFEFEF">
+		<img src="{{ software_details.software_image }}" alt="{{ software_details.software_name }}" width="50%" height="50%"/>
+	</div>
+	<div class="row h5" style="background-color: #FFFFFF">
+		<div class="col-6">
+			<span class="h4 fw-bold">Description :</span>
+			<div style="padding-left: 30px;padding-top: 10px">
+				{{ software_details.software_description }}
+			</div>
+		</div>
+		<div class="offset-1 col-4">
+			<div class="h4 fw-bold">
+				LICENSE :
+			</div>
+			<span style="padding-left: 15px;padding-top: 10px">{{ software_details.software_license }}</span>
+			<div class="h4 fw-bold">
+				Developer :
+			</div>
+			<span style="padding-left: 15px;padding-top: 10px">{{ software_details.software_developer.developer_name }}</span>
+			<div style="padding-left: 15px;padding-top: 10px">
+				<a href="{{ software_details.software_developer.developer_web_site }}" target="_blank">{{ software_details.software_developer.developer_web_site }}</a>
+			</div>
+		</div>
+	</div>
+{% endblock %}

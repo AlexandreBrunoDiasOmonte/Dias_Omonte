@@ -1,0 +1,55 @@
+{% extends 'layout/head.html' %}
+{% block title %}SOFTWARE LIBRARY{% endblock %}
+{% load static %}
+{% block favicon %}<link rel="shortcut icon" type="image/png" href="{% static 'medias/images/favicon-software-library.png' %}">{% endblock %}
+{% block breadcrumb %}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">Home</li>
+			<li class="breadcrumb-item active">SOFTWARE LIBRARY</li>
+        </ol>
+    </nav>
+{% endblock %}
+{% block body %}
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container-fluid">
+			<ul class="nav nav-pills">
+				{% if category_name == None %}
+					<li class="nav-item">
+						<a class="nav-link active" style="padding: 10px 15px;border-radius: 0" aria-current="page" href="{% url 'SOFTWARE_LIBRARY:software-library' %}">
+							All
+						</a>
+					</li>
+				{% else %}
+					<li class="nav-item">
+						<a class="nav-link lien" style="padding: 10px 15px;border-radius: 0" aria-current="page" href="{% url 'SOFTWARE_LIBRARY:software-library' %}">
+							All
+						</a>
+					</li>
+				{% endif %}
+				{% for category in categories %}
+					<li class="nav-item">
+						<a class="nav-link lien" style="padding: 10px 15px;border-radius: 0" aria-current="page" href="/software-library/{{ category.category_name }}">
+							{{ category }}
+						</a>
+					</li>
+				{% endfor %}
+			</ul>
+			{% include 'SOFTWARE_LIBRARY/software_search_form.html' %}
+		</div>
+	</nav>
+	{% include 'layout/pagination.html' %}
+	<div class="row row-cols-1 row-cols-md-4" style="margin: 15px 10px 15px 15px;">
+		{% for software in page_obj %}
+			<a style="margin-bottom: 20px" href="details/{{ software.software_name }}?page={% if page_number == None %}1{% else %}{{ page_number }}{% endif %}">
+				<button class="card w-100 h-100 button-software">
+					<img class="logo-image" style="width: 128px;height: 128px" src="{{ software.software_logo }}" alt="{{ software.software_name }}"/>
+					<div class="card-body">
+						<h5 class="text-uppercase text-center">{{ software.software_name }}</h5>
+					</div>
+				</button>
+			</a>
+		{% endfor %}
+	</div>
+	{% include 'layout/pagination.html' %}
+{% endblock %}
