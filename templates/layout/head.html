@@ -8,7 +8,7 @@
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="{% static 'files/css/styles.css' %}">
-		<link rel="shortcut icon" type="image/png" href="{% static 'photo_alexandre.png' %}">
+		<link rel="shortcut icon" type="image/png" href="{% static 'medias/images/photo_alexandre.png' %}">
 		<script src="https://kit.fontawesome.com/8b420c83a1.js" crossorigin="anonymous"></script>
 	</head>
 	<body class="fond body">
@@ -16,14 +16,9 @@
 		{% block breadcrumb %}
 		<nav aria-label="breadcrumb">
   			<ol class="breadcrumb">
-<<<<<<< HEAD
 				<li class="breadcrumb-item"><a href="{% url 'home' %}"><img class = "portrait" src = "{% static 'medias/images/photo_alexandre.png' %}"/></a></li>
     			<li class="breadcrumb-item"><a href="{% url 'home' %}">HOME</a></li>
     			<li class="breadcrumb-item active"><a href="{% url 'RESTAURANTS:restaurants' %}">SOFTWARE LIBRARY</a></li>
-=======
-				<li class="breadcrumb-item"><a href="{% url 'home' %}"><img class = "portrait" src = "{% static 'images/photo_alexandre.png' %}"/></a></li>
-    			<li class="breadcrumb-item"><a href="{% url 'home' %}">HOME</a></li>
->>>>>>> d08a65c155c9be096601f49d3c688b066269726d
   			</ol>
 		</nav>
 		{% endblock %}

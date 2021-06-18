@@ -1,6 +1,5 @@
-.idea/
 .vscode/
-venv/
+env/
 __pycache__/
 *.pyc
 1db.sqlite3
