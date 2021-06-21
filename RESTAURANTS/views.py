@@ -13,4 +13,4 @@ def restaurants(request):
 def details(request, resto_name):
     resto = get_object_or_404(Restaurant, pk=resto_name)
     context = {'resto': resto}
-    return render(request, 'RESTAURANTS/details.html', context)
+    return render(request, 'RESTAURANTS/restaurants-details.html', context)
