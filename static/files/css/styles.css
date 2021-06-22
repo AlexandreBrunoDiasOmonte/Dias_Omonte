@@ -78,9 +78,8 @@ body{
     border-top:3px solid #A9EAFE;
     border-left:3px solid #A9EAFE;
 }
-.bouton{
-    width: 30%;
-    margin-left:2%;
+.button{
+    width: 35%;
 }
 .bouton_details{
     width: 100%;

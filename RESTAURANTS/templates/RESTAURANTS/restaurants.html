@@ -13,23 +13,21 @@
 {% block body %}
 {% include 'layout/pagination.html' %}
     {% for resto in page_obj %}
-        <span>
-            <a href="details/{{resto.restaurant_name}}">
-                <button class="btn table-primary bouton">
-                    <h2>{{ resto.restaurant_name }}</h2>
-                    <div>
-                        <img class="resto-img" src="{{ resto.image }}" width="100%" height="100%">
-                    </div>
-                    <br>
-                    <div>
-                        <h5><a href="tel:{{ resto.phone }}">{{ resto.phone }}</a></h5>
-                    </div>
-                    <div>
-                        <h4>{{ resto.city }}, {{ resto.country }}</h4>
-                    </div>
-                </button>
-            </a>
-        </span>
+    <span class="bg-light" style="margin:4%">
+        <a href="details/{{resto.restaurant_name}}">
+            <button class="btn button">
+                <h2>{{ resto.restaurant_name | upper }}</h2>
+                <div>
+                    <img class="resto-img" src="{{ resto.image }}" width="100%" height="100%">
+                </div>
+                <br>
+                <div>
+                    <h5 class="text-center"><a href="tel:{{ resto.phone }}">{{ resto.phone }}</a></h5>
+                    <h4>{{ resto.city }}, {{ resto.country }}</h4>
+                </div>
+            </button>
+        </a>
+    </span>
     {% endfor %}
     {% include 'layout/pagination.html' %}
 {% endblock %}
