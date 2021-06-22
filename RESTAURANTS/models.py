@@ -2,7 +2,7 @@ from DIAS_OMONTE.settings import STATICFILES_DIRS
 from django.db import models
 
 class CodePostal(models.Model):
-    codePostal_name = models.PositiveIntegerField('Code Postal', max_length=6, blank=False, primary_key=True)
+    codePostal_name = models.PositiveIntegerField('Code Postal', blank=False, primary_key=True)
 
     def __str__(self):
         return str(self.codePostal_name)
