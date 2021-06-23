@@ -42,19 +42,23 @@
 		<div class="col-6">
 			<span class="h4 fw-bold">Description :</span>
 			<div style="padding-left: 30px;padding-top: 10px;padding-bottom: 3%;">
-				{{ software_details.software_description }}
+				{% if software_description_char_count <= 200 %}
+					<textarea rows="3" cols="70">{{ software_details.software_description }}</textarea>
+				{% elif software_description_char_count > 200 and software_description_char_count <= 400 %}
+					<textarea rows="6" cols="70">{{ software_details.software_description }}</textarea>
+				{% elif software_description_char_count > 400 and software_description_char_count <= 600 %}
+					<textarea rows="9" cols="70">{{ software_details.software_description }}</textarea>
+				{% endif %}
 			</div>
 		</div>
 		<div class="offset-1 col-4">
 			<div class="h4 fw-bold">
-				LICENSE :
+				LICENSE : <span class="fw-normal h5">{{ software_details.software_license }}</span>
 			</div>
-			<span style="padding-left: 15px;padding-top: 10px">{{ software_details.software_license }}</span>
 			<div class="h4 fw-bold">
-				Developer :
+				Developer : <span class="fw-normal h5">{{ software_details.software_developer.developer_name }}</span>
 			</div>
-			<span style="padding-left: 15px;padding-top: 10px">{{ software_details.software_developer.developer_name }}</span>
-			<div style="padding-left: 15px;padding-top: 10px">
+			<div style="padding-top: 10px">
 				<a href="{{ software_details.software_developer.developer_web_site }}" target="_blank">{{ software_details.software_developer.developer_web_site }}</a>
 			</div>
 		</div>

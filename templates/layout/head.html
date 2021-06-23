@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="fr" class="html">
+<html lang="fr">
 	<head>
 		<title>{% block title %}{% endblock %}</title>
 		<meta charset="utf-8">
@@ -11,7 +11,7 @@
 		{% block favicon %}<link rel="shortcut icon" type="image/png" href="{% static 'medias/images/photo_alexandre.png' %}">{% endblock favicon %}
 		<script src="https://kit.fontawesome.com/8b420c83a1.js" crossorigin="anonymous"></script>
 	</head>
-	<body class="fond body">
+	<body class="fond">
 		{% include 'layout/menu.html' %}
 		{% block breadcrumb %}
 		<nav aria-label="breadcrumb">

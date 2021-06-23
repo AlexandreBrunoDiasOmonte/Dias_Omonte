@@ -18,14 +18,17 @@ def softwareLibrary(request):
 
 def softwareDetails(request, software_name):
     software = get_object_or_404(Software, pk=software_name)
+    software_description_char_count = len(software.software_description)
+    print(software_description_char_count)
     logiciels = Software.objects.all().order_by('software_name')
-    paginator = Paginator(logiciels, 15)
+    paginator = Paginator(logiciels, 12)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     context = {
         'software_details': software,
         'page_number': page_number,
         'page_obj': page_obj,
+        'software_description_char_count': software_description_char_count
     }
     return render(request, 'SOFTWARE_LIBRARY/software-details.html', context)
 

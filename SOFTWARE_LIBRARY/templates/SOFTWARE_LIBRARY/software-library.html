@@ -41,10 +41,10 @@
 	{% include 'layout/pagination.html' %}
 	<div class="row row-cols-1 row-cols-md-4" style="margin: 15px 10px 15px 15px;">
 		{% for software in page_obj %}
-			<a style="margin-bottom: 20px" href="details/{{ software.software_name }}?page={% if page_number == None %}1{% else %}{{ page_number }}{% endif %}">
+			<a style="margin-bottom: 10px" href="details/{{ software.software_name }}?page={% if page_number == None %}1{% else %}{{ page_number }}{% endif %}">
 				<button class="card w-100 h-100 button-software">
-					<img class="logo-image" style="width: 128px;height: 128px" src="{{ software.software_logo }}" alt="{{ software.software_name }}"/>
-					<div class="card-body">
+					<img class="logo-image" style="padding:0px;" width="128" height="128" src="{{ software.software_logo }}" alt="{{ software.software_name }}"/>
+					<div style="margin-top:0px;">
 						<h5 class="text-uppercase text-center">{{ software.software_name }}</h5>
 					</div>
 				</button>
