@@ -8,7 +8,7 @@ class SoftwareAdmin(admin.ModelAdmin):
     search_fields = ['software_name', 'software_category', 'software_developer', 'software_jlicense']
     list_display = ['software_name', 'software_version', 'software_license', 'software_category', 'software_developer',
                     'software_source', 'software_logo', 'software_image']
-    list_per_page = 20
+    list_per_page = 10
     ordering = ['software_name']
 
 
