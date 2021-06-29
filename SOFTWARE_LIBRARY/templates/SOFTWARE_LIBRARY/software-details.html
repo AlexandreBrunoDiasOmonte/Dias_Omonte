@@ -1,11 +1,11 @@
 {% extends 'layout/head.html' %}
-{% block title %}SOFTWARE DETAILS{% endblock %}
 {% load static %}
+{% block title %}SOFTWARE - {{ software_details.software_name }}{% endblock %}
 {% block favicon %}<link rel="shortcut icon" type="image/png" href="{{ software_details.software_logo }}">{% endblock favicon%}
 {% block breadcrumb %}
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a class=" btn lien" href="{% url 'home' %}"><img src="{% static 'medias/images/photo_alexandre.png' %}" width=21 height=24 /></a></li>
+            <li class="breadcrumb-item"><a class="btn lien" href="{% url 'home' %}"><img src="{% static 'medias/images/photo_alexandre.png' %}" width=21 height=24 /></a></li>
 			<li class="breadcrumb-item active"><a class="btn lien"  href="{% url 'SOFTWARE_LIBRARY:software-library' %}?page={{ page_number }}">SOFTWARE LIIBRARY</a></li>
 			<li class="breadcrumb-item active"><a class="btn lien">{{ software_details.software_name }}</a></li>
         </ol>
@@ -15,17 +15,10 @@
 	<nav class="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm navbar-light" style="background-color: #A9EAFE">
 		<div class="container-fluid">
 			<span class="navbar-brand">
-				{% if page_number == None %}
-					<a href="{% url 'SOFTWARE_LIBRARY:software-library' %}?page=1">
-						<img src="{% static 'medias/images/left-arrow-26.png' %}" alt="left-arrow">
-					</a>
-				{% else %}
-					<a href="{% url 'SOFTWARE_LIBRARY:software-library' %}?page={{ page_number }}">
-						<img src="{% static 'medias/images/left-arrow-26.png' %}" alt="left-arrow">
-					</a>
-				{% endif %}
-				<img src="{{ software_details.software_logo }}" alt="{{ software_details.software_name }}" width="50px" height="50px"/>
-				<span class="h3">{{ software_details.software_name }}</span>
+				<a class="btn lien" href="{% url 'SOFTWARE_LIBRARY:software-library' %}?page={{ page_number }}">
+					<img src="{{ software_details.software_logo }}" alt="{{ software_details.software_name }}" width="50px" height="50px"/>
+					<span class="btn lien">{{ software_details.software_name }}</span>
+				</a>
 			</span>
 			<span class="col col-4">
 				<label class="btn-lg h4">Version: {{ software_details.software_version }}</label>

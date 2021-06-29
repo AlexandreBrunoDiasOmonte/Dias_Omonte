@@ -1,7 +1,7 @@
 {% extends 'layout/head.html' %}
-{% block title %}DETAILS{% endblock %}
 {% load static %}
-{% block favicon %}<link rel="shortcut icon" type="image/png" href="{{ resto.image }}">{% endblock favicon%}
+{% block title %}DETAILS{% endblock title %}
+{% block favicon %}<link rel="shortcut icon" type="image/png" href="{{ resto.image }}">{% endblock favicon %}
 {% block breadcrumb %}
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
@@ -10,14 +10,14 @@
             <li class="breadcrumb-item active"><a class="btn lien">{{ resto.restaurant_name }}</a></li>
         </ol>
     </nav>
-{% endblock %}
+{% endblock breadcrumb %}
 {% block body %}
 	<h2 class="text-center">{{ resto.restaurant_name | upper }}</h2>
 	<div class="clearfix" style="margin-top:2%">
 		<img class="resto-img col-md-6 float-md-start mb-4 ms-md-4" style="margin-right:4%" src="{{ resto.image }}" width=50% height=50%>
 		<h4>{{ resto.adress }} {{ resto.city.cp_name }} {{ resto.city }}, {{ resto.country }}</h4>
-		<h4><a href="tel:{{ resto.phone }}">{{ resto.phone }}</a></h4>
-		<h4><i class="fas fa-at"></i>&nbsp;<a href="mailto:{{ resto.email }}">{{ resto.email }}</a></h4>
-		<h4><i class="fab fa-internet-explorer"></i>&nbsp;<a href="{{ resto.webSite }}" target="_blank">{{ resto.webSite }}</a></h4>
+		<h4><i class="bi bi-telephone-fill"></i>&nbsp;<a href="tel:{{ resto.phone }}">{{ resto.phone }}</a></h4>
+		<h4><i class="bi bi-envelope-fill"></i>&nbsp;<a href="mailto:{{ resto.email }}">{{ resto.email }}</a></h4>
+		<h4><i class="bi bi-globe"></i></i>&nbsp;<a href="{{ resto.webSite }}" target="_blank">{{ resto.webSite }}</a></h4>
 	</div>
-{% endblock %}
+{% endblock body %}

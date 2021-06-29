@@ -1,6 +1,15 @@
 {% extends 'layout/head.html' %}
-{% block title %}Search{% endblock %}
 {% load static %}
+{% block title %}Search{% endblock title %}
+{% block breadcrumb %}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a class="btn lien" href="{% url 'home' %}"><img src="{% static 'medias/images/photo_alexandre.png' %}" width=21 height=24 /></a></li>
+			<li class="breadcrumb-item active"><a class="btn lien" href="{% url 'SOFTWARE_LIBRARY:software-library' %}?page={{ page_number }}">SOFTWARE LIIBRARY</a></li>
+			<li class="breadcrumb-item active"><a class="btn lien">R&Eacute;SULTAT POUR <mark style="background-color: #74D0F1;padding: 10px;"><b>{{ query }}</mark></b></a></li>
+        </ol>
+    </nav>
+{% endblock breadcrumb %}
 {% block body %}
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container-fluid">
@@ -35,4 +44,4 @@
 		{% endfor %}
 	</div>
 	{% include 'layout/pagination_search.html' %}
-{% endblock %}
+{% endblock body %}

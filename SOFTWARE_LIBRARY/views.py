@@ -19,7 +19,6 @@ def softwareLibrary(request):
 def softwareDetails(request, software_name):
     software = get_object_or_404(Software, pk=software_name)
     software_description_char_count = len(software.software_description)
-    print(software_description_char_count)
     logiciels = Software.objects.all().order_by('software_name')
     paginator = Paginator(logiciels, 12)
     page_number = request.GET.get('page')
@@ -56,6 +55,7 @@ def search(request):
         'results': results,
         'categories': categories,
         'page_number': page_number,
+        'query': query,
     }
     return render(request, 'SOFTWARE_LIBRARY/software-library-search.html', context)
 

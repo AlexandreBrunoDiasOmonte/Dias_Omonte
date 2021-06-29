@@ -1,7 +1,7 @@
 {% extends 'layout/head.html' %}
-{% block title %}SOFTWARE LIBRARY{% endblock %}
 {% load static %}
-{% block favicon %}<link rel="shortcut icon" type="image/png" href="{% static 'medias/images/favicon-software-library.png' %}">{% endblock %}
+{% block title %}SOFTWARE LIBRARY{% endblock title %}
+{% block favicon %}<link rel="shortcut icon" type="image/png" href="{% static 'medias/images/favicon-software-library.png' %}">{% endblock favicon %}
 {% block breadcrumb %}
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
@@ -9,7 +9,7 @@
 			<li class="breadcrumb-item active"><a class="btn lien">SOFTWARE LIIBRARY</a></li>
         </ol>
     </nav>
-{% endblock %}
+{% endblock breadcrumb %}
 {% block body %}
 	<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom:10px;">
 		<div class="container-fluid">
@@ -42,7 +42,7 @@
 	<div class="row row-cols-1 row-cols-md-4" style="margin: 15px 10px 15px 15px;">
 		{% for software in page_obj %}
 			<a style="margin-bottom: 10px" href="details/{{ software.software_name }}?page={% if page_number == None %}1{% else %}{{ page_number }}{% endif %}">
-				<button class="card w-100 h-100 button-software">
+				<button class="card w-100 h-100 button-software" style="background-color: #74D0F1;border:none;">
 					<img class="logo-image" style="padding:0px;" width="128" height="128" src="{{ software.software_logo }}" alt="{{ software.software_name }}"/>
 					<div style="margin-top:0px;">
 						<h5 class="text-uppercase text-center">{{ software.software_name }}</h5>
@@ -52,4 +52,4 @@
 		{% endfor %}
 	</div>
 	{% include 'layout/pagination.html' %}
-{% endblock %}
+{% endblock body %}

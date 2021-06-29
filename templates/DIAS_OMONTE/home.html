@@ -1,6 +1,7 @@
 {% extends 'layout/head.html' %}
-{% block title %}HOME{% endblock %}
 {% load static %}
+{% block title %}HOME{% endblock title %}
+{% block favicon %}<link rel="shortcut icon" type="image/png" href="{% static 'medias/images/photo_alexandre.png' %}">{% endblock favicon %}
 {% block breadcrumb %}
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">

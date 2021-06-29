@@ -1,6 +1,6 @@
 {% extends 'layout/head.html' %}
-{% block title %}RESTAURANTS{% endblock %}
 {% load static %}
+{% block title %}RESTAURANTS{% endblock title %}
 {% block favicon %}<link rel="shortcut icon" type="image/png" href="{% static 'medias/images/logo-restaurant-fond-1.png' %}">{% endblock favicon %}
 {% block breadcrumb %}
     <nav aria-label="breadcrumb">
@@ -9,25 +9,19 @@
             <li class="breadcrumb-item active"><a class="btn lien">Restaurants</a></li>
         </ol>
     </nav>
-{% endblock %}
+{% endblock breadcrumb %}
 {% block body %}
-{% include 'layout/pagination.html' %}
-    {% for resto in page_obj %}
-    <span class="bg-light" style="margin:4%">
-        <a href="details/{{resto.restaurant_name}}">
-            <button class="btn button">
-                <h2>{{ resto.restaurant_name | upper }}</h2>
-                <div>
-                    <img class="resto-img" src="{{ resto.image }}" width="100%" height="100%">
-                </div>
-                <br>
-                <div>
-                    <h5 class="text-center"><a href="tel:{{ resto.phone }}">{{ resto.phone }}</a></h5>
-                    <h4>{{ resto.city }}, {{ resto.country }}</h4>
-                </div>
-            </button>
-        </a>
-    </span>
-    {% endfor %}
     {% include 'layout/pagination.html' %}
-{% endblock %}
+    <div class="row row-cols-1 row-cols-md-3" style="margin: 15px 10px 15px 15px;">
+        {% for resto in page_obj %}
+            <a style="margin-bottom: 10px;" href="details/{{resto.restaurant_name}}?page={% if page_number == None %}1{% else %}{{ page_number }}{% endif %}">
+                <button class="card w-100 h-100 button-software" style="background-color: #A9EAFE;border:none">
+                    <h2>{{ resto.restaurant_name | upper }}</h2>
+                    <img class="resto-image" style="padding:0px;" width="100%" height="100%" src="{{ resto.image }}" alt="{{ resto.restaurant_name }}">
+                    <h4 style="margin-top:5%">{{ resto.city }}, {{ resto.country }}</h4>
+                </button>
+            </a>
+        {% endfor %}
+    </div>
+    {% include 'layout/pagination.html' %}
+{% endblock body %}
