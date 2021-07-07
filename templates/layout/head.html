@@ -12,10 +12,10 @@
 		<link rel="stylesheet" type="text/css" href="{% static 'files/css/styles.css' %}">
 		<script src="https://kit.fontawesome.com/8b420c83a1.js" crossorigin="anonymous"></script>
 	</head>
-	<body class="fond">
+	<body class="fond" style="position: absolute;">
 		{% include 'layout/menu.html' %}
 		{% block breadcrumb %}
-		<nav aria-label="breadcrumb">
+		<nav aria-label="breadcrumb" style="position:fixed;top:0px">
   			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="{% url 'home' %}"><img class="portrait" src="{% static 'medias/images/photo_alexandre.png' %}"/></a></li>
     			<li class="breadcrumb-item"><a href="{% url 'home' %}">HOME</a></li>

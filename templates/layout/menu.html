@@ -1,22 +1,21 @@
 {% load static %}
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #74D0F1;">
-  <a class="nav-link brand accueil" href="{% url 'home' %}"><img class="image_menu" src = "{% static 'medias/images/photo_alexandre.png' %}"/><span class="sr-only">(current)</span></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color:#74D0F1;width: 100%;">
+    <a class="nav-link brand accueil" href="{% url 'home' %}"><img class="image_menu" src = "{% static 'medias/images/photo_alexandre.png' %}"/><span class="sr-only">(current)</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link brand accueil lien" href="{% url 'home' %}">HOME</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link brand lien" href="{% url 'RESTAURANTS:restaurants' %}">RESTAURANTS</a>
-        
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link brand lien" href="{% url 'SOFTWARE_LIBRARY:software-library' %}">SOFTWARE LIBRARY</a>
-      </li>
-    </ul>
-  </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link brand accueil lien" href="{% url 'home' %}">HOME</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link brand lien" href="{% url 'RESTAURANTS:restaurants' %}">RESTAURANTS</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link brand lien" href="{% url 'SOFTWARE_LIBRARY:software-library' %}">SOFTWARE LIBRARY</a>
+            </li>
+        </ul>
+    </div>
 </nav>

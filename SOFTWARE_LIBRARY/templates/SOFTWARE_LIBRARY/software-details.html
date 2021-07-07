@@ -1,6 +1,6 @@
 {% extends 'layout/head.html' %}
 {% load static %}
-{% block title %}SOFTWARE - {{ software_details.software_name }}{% endblock %}
+{% block title %}SOFTWARE - {{ software_details.software_name }}{% endblock title %}
 {% block favicon %}<link rel="shortcut icon" type="image/png" href="{{ software_details.software_logo }}">{% endblock favicon%}
 {% block breadcrumb %}
     <nav aria-label="breadcrumb">
@@ -10,13 +10,13 @@
 			<li class="breadcrumb-item active"><a class="btn lien">{{ software_details.software_name }}</a></li>
         </ol>
     </nav>
-{% endblock %}
+{% endblock breadcrumb %}
 {% block body %}
-	<nav class="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm navbar-light" style="background-color: #A9EAFE">
+	<nav class="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm navbar-light" style="background-color: #74D0F1">
 		<div class="container-fluid">
 			<span class="navbar-brand">
 				<a class="btn lien" href="{% url 'SOFTWARE_LIBRARY:software-library' %}?page={{ page_number }}">
-					<img src="{{ software_details.software_logo }}" alt="{{ software_details.software_name }}" width="50px" height="50px"/>
+					<i class="fas fa-chevron-left fa-3x lien"></i><img src="{{ software_details.software_logo }}" alt="{{ software_details.software_name }}" width="50px" height="50px"/>
 					<span class="btn lien">{{ software_details.software_name }}</span>
 				</a>
 			</span>
@@ -56,4 +56,4 @@
 			</div>
 		</div>
 	</div>
-{% endblock %}
+{% endblock body %}
